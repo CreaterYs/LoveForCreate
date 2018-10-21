@@ -1,0 +1,26 @@
+﻿drop table if EXISTS xj;
+create table xj(
+       sid  char(13) 	not null 	COMMENT '学号',
+       xm   varchar(20) not null 	COMMENT '学生名',
+	   zy	varchar(40) not null 	comment '专业',
+	   xb	char(2) 	not null 	comment '性别',
+	   csrq char(8) 	not null 	COMMENT '出生日期',
+	   mm   varchar(20) not null 	COMMENT '密码',
+	   bj 	char(8) 	not null 	COMMENT '班级',
+       dzyj varchar(40)           	comment '电子邮件',
+	   qq	varchar(16)            	comment 'QQ号',
+	   yddh	char(11)               	comment '移动电话',
+       primary KEY(sid)
+)engine=innodb comment='学籍表';
+
+
+drop table if exists cj;
+create table cj(
+      xh    char(13)    not null,
+      kcmc  varchar(40) not null,
+      xn    int         not null,
+      xq    int         not null,
+      zp    varchar(10)         ,
+      gxsj  datetime            ,
+      primary key(xh,kcmc,xn,xq)
+)engine=innodb ;
